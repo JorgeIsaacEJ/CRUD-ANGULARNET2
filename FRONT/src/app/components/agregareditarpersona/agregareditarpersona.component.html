@@ -1,0 +1,47 @@
+<form [formGroup]="agregareditarpersona" (ngSubmit)="agregar()" novalidate>
+  <div class="row">
+    <div class="col">
+      <label for="input_nombre" class="form-label">Nombre</label>
+      <input formControlName="nombre" type="text" class="form-control" id="input_nombre" [class.is-invalid]="agregareditarpersona.get('nombre')?.invalid && agregareditarpersona.get('nombre')?.touched">
+      <div *ngIf="agregareditarpersona.get('nombre')?.invalid && agregareditarpersona.get('nombre')?.touched"
+        class="invalid-feedback">
+        Campo necesario
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="input_direccion" class="form-label">Dirección</label>
+      <input formControlName="direccion" type="text" class="form-control" id="input_direccion" [class.is-invalid]="agregareditarpersona.get('direccion')?.invalid && agregareditarpersona.get('direccion')?.touched">
+      <div *ngIf="agregareditarpersona.get('direccion')?.invalid && agregareditarpersona.get('direccion')?.touched"
+        class="invalid-feedback">
+        Campo necesario
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="input_tel" class="form-label">Telefono</label>
+      <input formControlName="telefono" type="tel" class="form-control" id="input_tel" [class.is-invalid]="agregareditarpersona.get('telefono')?.invalid && agregareditarpersona.get('telefono')?.touched">
+      <div *ngIf="agregareditarpersona.get('telefono')?.invalid && agregareditarpersona.get('telefono')?.touched"
+        class="invalid-feedback">
+        Campo invalido
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="input_correo" class="form-label">Correo</label>
+      <input formControlName="correo" type="email" class="form-control" id="input_correo" [class.is-invalid]="agregareditarpersona.get('correo')?.invalid && agregareditarpersona.get('correo')?.touched">
+      <div *ngIf="agregareditarpersona.get('correo')?.invalid && agregareditarpersona.get('correo')?.touched"
+        class="invalid-feedback">
+        Campo invalido
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col"><button type="button" class="btn btn-primary" routerLink="/">Volver</button></div>
+    <div class="col"><button type="submit" [disabled]="agregareditarpersona.invalid"
+        class="btn btn-primary float-end">Agregar</button></div>
+  </div>
+</form>
